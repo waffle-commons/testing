@@ -29,6 +29,19 @@ namespace = "Waffle\\Commons\\Testing"
 permit = [
     "Waffle\\Commons\\Testing\\**",
     "Waffle\\Commons\\Contracts\\**",
+    "IgorPhp\\IgorBundle\\Attribute\\**",
+    "@layer:core",
+    "@layer:psr",
+]
+
+# [CARRY-04]: PHPUnit is a runtime dependency of this dev-only package, permitted in
+# the WaffleTestCase layer only, so the kernel client and the doubles stay free of it.
+[[guard.perimeter.rules]]
+namespace = "Waffle\\Commons\\Testing\\PHPUnit"
+permit = [
+    "Waffle\\Commons\\Testing\\**",
+    "Waffle\\Commons\\Contracts\\**",
+    "PHPUnit\\**",
     "@layer:core",
     "@layer:psr",
 ]

@@ -10,8 +10,8 @@
 Waffle Testing Component
 ==========================
 
-> **Release:** _unreleased_ &nbsp;|&nbsp; [`CHANGELOG.md`](./CHANGELOG.md)
-> **Status:** In development for `0.1.0-beta7` — roadmap `[TEST-01]`. A dev-only package (`composer require --dev`); its test doubles implement the same `waffle-commons/contracts` interfaces as production code.
+> **Release:** `0.1.0-beta7` &nbsp;|&nbsp; [`CHANGELOG.md`](./CHANGELOG.md)
+> **Status:** First released in `0.1.0-beta7` — roadmap `[TEST-01]`. A dev-only package (`composer require --dev`); its test doubles implement the same `waffle-commons/contracts` interfaces as production code.
 
 Kernel testing bridge for the Waffle framework: in-process request dispatch through the real pipeline, plus time, queue, mailer and HTTP-client test doubles.
 

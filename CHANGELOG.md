@@ -33,6 +33,9 @@ Released in lockstep with the Waffle Commons umbrella tag.
     `reclaim()` plays the recovery after a worker crash.
   - `Queue\InMemoryFailedMessageStore` — the dead-letter store in memory.
   - `Mailer\MailerSpy` — records every `Email` instead of sending it (`[QUEUE-03]` contract).
+  - `RateLimit\InMemoryLimiterStateStorage` — the `[NET-01]` limiter store in memory: the Redis store's
+    token-bucket arithmetic on the injected clock, so a test drives refills with a frozen clock. Correct for
+    one process only, which is why it is a test double and not a production store.
 - Exceptions: `MissingServiceException`, `UnexpectedRequestException`, `SimulatedNetworkException`
   (a PSR-18 network exception), `InvalidJsonException`, `UnknownDeliveryException` (a queue exception).
 

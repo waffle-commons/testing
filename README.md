@@ -83,6 +83,7 @@ final class OrderApiTest extends WaffleTestCase
 | `Queue\InMemoryQueue` | `QueueDispatcherInterface` and `QueueConsumerInterface` | Records every dispatched envelope (`dispatched()`, by queue too) with deterministic ids, and serves a worker: `receive()` follows the injected clock and never blocks, `acknowledge()` / `release()` settle a delivery, `reclaim()` plays the recovery after a worker crash. |
 | `Queue\InMemoryFailedMessageStore` | `FailedMessageStoreInterface` | Keeps what a worker gave up on — full envelope, reason, instant from the clock — oldest first. |
 | `Mailer\MailerSpy` | `MailerInterface` | Sends nothing; records every `Email` (`sent()`). |
+| `RateLimit\InMemoryLimiterStateStorage` | `LimiterStateStorageInterface` | Token buckets in memory, with the arithmetic of the Redis store (`RateLimit-*` values, `Retry-After`) on the injected clock: advance a `FrozenClock` to refill. One process only — production keeps limiter state in Redis, never in worker memory. |
 
 ## 🧭 Architectural boundary (`mago guard`)
 
